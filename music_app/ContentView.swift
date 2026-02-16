@@ -21,26 +21,31 @@ struct ContentView: View {
     }
     
     var body: some View {
-        TabView(selection: $selectedTab) {
-            HooksView()
-                .tabItem {
-                    Label("Hooks", systemImage: "play.square.stack.fill")
-                }
-                .tag(0)
+        ZStack(alignment: .bottom) {
+            TabView(selection: $selectedTab) {
+                HooksView()
+                    .tabItem {
+                        Label("Hooks", systemImage: "play.square.stack.fill")
+                    }
+                    .tag(0)
+                
+                NovaStudioView()
+                    .tabItem {
+                        Label("Studio", systemImage: "sparkles")
+                    }
+                    .tag(1)
+                
+                LibraryView()
+                    .tabItem {
+                        Label("Library", systemImage: "music.note.list")
+                    }
+                    .tag(2)
+            }
+            .tint(AppTheme.primary)
             
-            NovaStudioView()
-                .tabItem {
-                    Label("Studio", systemImage: "sparkles")
-                }
-                .tag(1)
-            
-            Text("Library")
-                .tabItem {
-                    Label("Library", systemImage: "music.note.list")
-                }
-                .tag(2)
+            // Persistent Mini Player
+            MiniPlayerView()
         }
-        .tint(AppTheme.primary)
     }
 }
 

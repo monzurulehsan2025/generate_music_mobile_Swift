@@ -167,6 +167,11 @@ struct StudioTrackRow: View {
         .padding()
         .background(AppTheme.surface.opacity(0.5))
         .cornerRadius(15)
+        .onTapGesture {
+            withAnimation {
+                PlaybackManager.shared.play(song: song)
+            }
+        }
     }
 }
 
