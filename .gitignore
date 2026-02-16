@@ -1,0 +1,30 @@
+# Xcode
+#
+# gitignore contributors: switch to the latest Xcode gitignore:
+# https://github.com/github/gitignore/blob/main/Swift.gitignore
+
+## Build results
+build/
+DerivedData/
+
+## Project settings
+xcuserdata/
+
+## Scripts
+*.sh
+
+## Miscellaneous
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+!default.perspectivev3
+
+## Personal
+.DS_Store
+
+## Swift Package Manager
+.build/
+.swiftpm/
+
+## Other
+*.xcuserstate
